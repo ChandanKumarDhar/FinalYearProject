@@ -38,6 +38,11 @@ public class playerController : MonoBehaviour
             canJump = true;
         }
 
+        if(collision.transform.tag == "Enemy")
+        {
+            CinemachineShake.Instance.ShakeCamera(5f, 1f);
+        }
+
     }
 
     

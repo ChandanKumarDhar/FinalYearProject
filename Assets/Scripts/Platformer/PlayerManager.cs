@@ -7,11 +7,11 @@ public class PlayerManager : MonoBehaviour
     [SerializeField] private GameObject[] players;
     public int totalGems = 0;
 
-    public static PlayerManager instance; //------------ Singleton Pattern
+    public static PlayerManager Instance { get; private set; }
 
     private void Awake()
     {
-        instance = this;
+        Instance = this;
     }
 
     private int currentPlayerIndex = 0;
