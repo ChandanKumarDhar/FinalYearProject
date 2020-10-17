@@ -12,7 +12,7 @@ public class Gems : MonoBehaviour
         {
             PlayerManager.Instance.totalGems++;
             AudioManager.Instance.AudioChangeFunc(0, 0);
-            Destroy(Instantiate(GameManager.instance.GemsParticleEffect, this.transform.position, this.transform.rotation), effectsDuration);
+            Destroy(Instantiate(GameManager.Instance.GemsParticleEffect, this.transform.position, this.transform.rotation), effectsDuration);
             Destroy(this.gameObject);
         }
     }

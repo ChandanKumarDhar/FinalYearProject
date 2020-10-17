@@ -12,6 +12,8 @@ public class playerController : MonoBehaviour
     private void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
+        TimeManager.Instance.StartTimer();
+        AudioManager.Instance.BackgroundAudioFunc(0);
     }
 
     private void Update()
@@ -41,6 +43,7 @@ public class playerController : MonoBehaviour
         if(collision.transform.tag == "Enemy")
         {
             CinemachineShake.Instance.ShakeCamera(5f, 1f);
+            AudioManager.Instance.AudioChangeFunc(0, 1);
         }
 
     }

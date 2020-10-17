@@ -23,14 +23,17 @@ public class AudioManager : MonoBehaviour
     /// Set and Play Background Music
     /// </summary>
     /// <param name="_audioClipIndex"></param>
-    public void BackgroundAudioFunc(int _audioClipIndex)
+    public void BackgroundAudioFunc(int _audioClipIndex, bool _isLoop = true, float _pitch = 1f, float _volume = .25f)
     {
         if (backgroundAudio.isPlaying)
         {
             backgroundAudio.Stop();
         }
 
-        backgroundAudio.clip = backgroundClip[0];
+        backgroundAudio.pitch = _pitch;
+        backgroundAudio.volume = _volume;
+        backgroundAudio.loop = _isLoop;
+        backgroundAudio.clip = backgroundClip[_audioClipIndex];
         backgroundAudio.Play();
     }
 
@@ -39,13 +42,16 @@ public class AudioManager : MonoBehaviour
     /// </summary>
     /// <param name="_audioSource"></param>
     /// <param name="_audioClipIndex"></param>
-    public void AudioChangeFunc(int _audioSource, int _audioClipIndex)
+    public void AudioChangeFunc(int _audioSource, int _audioClipIndex, bool _isLoop = false, float _pitch = 1f, float _volume = 1f)
     {
         if (audioSource[_audioSource].isPlaying)
         {
             audioSource[_audioSource].Stop();
         }
 
+        audioSource[_audioSource].pitch = _pitch;
+        audioSource[_audioSource].volume = _volume;
+        audioSource[_audioSource].loop = _isLoop;
         audioSource[_audioSource].clip = sounds[_audioClipIndex];
         audioSource[_audioSource].Play();
     }

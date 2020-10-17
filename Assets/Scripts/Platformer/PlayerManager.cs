@@ -6,12 +6,19 @@ public class PlayerManager : MonoBehaviour
 {
     [SerializeField] private GameObject[] players;
     public int totalGems = 0;
+    public int totalLife = 3;
 
     public static PlayerManager Instance { get; private set; }
 
     private void Awake()
     {
         Instance = this;
+    }
+
+    private void Start()
+    {
+        CinemachineShake.Instance.ShakeCamera(5f, 1f, 3f);
+        AudioManager.Instance.AudioChangeFunc(0, 1);
     }
 
     private int currentPlayerIndex = 0;
