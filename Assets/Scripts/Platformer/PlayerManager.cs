@@ -7,6 +7,7 @@ public class PlayerManager : MonoBehaviour
     [SerializeField] private GameObject[] players;
     public int totalGems = 0;
     public int totalLife = 3;
+    public int requiredKey = 1;
 
     public static PlayerManager Instance { get; private set; }
 
