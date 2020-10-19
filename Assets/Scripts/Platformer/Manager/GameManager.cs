@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     [Header("Particle Effects")]
     public GameObject GemsParticleEffect;
     public GameObject KeyParticleEffect;
+    public GameObject FallingRocksParticleEffect;
 
     private void Awake()
     {
