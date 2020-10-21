@@ -42,6 +42,12 @@ public class PauseMenuScript : MonoBehaviour
         animator.Play("PauseMenuOffOption");
     }
 
+    public void ReturnToMainMenuButton()
+    {
+        Time.timeScale = 1f;
+        GameManager.Instance.MainMenu();
+    }
+
     public void TurnOnOptionPanel()
     {
         optionPanelAnimator.Play("optionMenuOpen");

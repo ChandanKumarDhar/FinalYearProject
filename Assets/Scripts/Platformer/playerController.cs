@@ -54,6 +54,8 @@ public class playerController : MonoBehaviour
             {
                 AudioManager.Instance.BackgroundAudioFunc(1, false);
                 Destroy(Instantiate(GameManager.Instance.PlayerDieParticleEffect, this.transform.position, this.transform.rotation), dieEffectsDuration);
+                GameManager.Instance.GameOverPanel.SetActive(true);
+                TimeManager.Instance.PauseTimer();
                 Destroy(this.gameObject);
             }
         }

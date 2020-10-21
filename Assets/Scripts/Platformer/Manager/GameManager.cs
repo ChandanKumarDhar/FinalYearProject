@@ -13,6 +13,9 @@ public class GameManager : MonoBehaviour
     public GameObject KeyParticleEffect;
     public GameObject FallingRocksParticleEffect;
 
+    [Header("Game Over Panel")]
+    public GameObject GameOverPanel;
+
     private void Awake()
     {
         Instance = this;
@@ -27,5 +30,10 @@ public class GameManager : MonoBehaviour
     public void LoadCurrentLevel()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void MainMenu()
+    {
+        Application.Quit();
     }
 }
