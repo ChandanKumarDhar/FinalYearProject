@@ -3,6 +3,8 @@ using UnityEngine.SceneManagement;
 
 public class playerController : MonoBehaviour
 {
+    [SerializeField] float dieEffectsDuration = 5f;
+
     Rigidbody2D rb2d;
 
     private bool canJump = true;
@@ -42,8 +44,18 @@ public class playerController : MonoBehaviour
 
         if(collision.transform.tag == "Enemy")
         {
-            CinemachineShake.Instance.ShakeCamera(5f, 1f);
-            AudioManager.Instance.AudioChangeFunc(0, 1);
+            PlayerManager.Instance.totalLife--;
+            if (PlayerManager.Instance.totalLife > 0)
+            {
+                CinemachineShake.Instance.ShakeCamera(5f, 1f);
+                AudioManager.Instance.AudioChangeFunc(0, 1);
+            }
+            else
+            {
+                AudioManager.Instance.BackgroundAudioFunc(1, false);
+                Destroy(Instantiate(GameManager.Instance.PlayerDieParticleEffect, this.transform.position, this.transform.rotation), dieEffectsDuration);
+                Destroy(this.gameObject);
+            }
         }
 
     }

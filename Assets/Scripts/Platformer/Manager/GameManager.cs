@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
 
     [Header("Particle Effects")]
     public GameObject GemsParticleEffect;
+    public GameObject PlayerDieParticleEffect;
     public GameObject KeyParticleEffect;
     public GameObject FallingRocksParticleEffect;
 
