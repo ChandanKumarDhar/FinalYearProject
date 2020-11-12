@@ -16,6 +16,7 @@ TagManager:
   - Gems
   - Barrier
   - Key
+  - FinalPoint
   layers:
   - Default
   - TransparentFX
@@ -28,7 +29,7 @@ TagManager:
   - Enemy
   - AI_Barrier
   - Player
-  - 
+  - PostProcessing
   - 
   - 
   - 

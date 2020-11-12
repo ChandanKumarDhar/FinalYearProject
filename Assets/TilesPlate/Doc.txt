@@ -1,0 +1,34 @@
+- using UlkaGames.Experimental.Addressable;
+
+[Need to inherit your class from LoadData.cs and used StartFunc() instead of Start() in derived class]
+- LoadData.DownloadAndFetchData(string _jsonFile, string _groupData)
+  returns the data and keeps it in dataObjects list<DataObjects>
+  Example: LoadDataTest.cs
+
+- LoadData.DownloadAssetUsingAddressable(string _adderessableAddress, ObjectType.Sprite)
+  Downloads data or fetch it if already downloaded and put in Holder object after its downloaded
+  Holder Objects are-
+  LoadData.spriteHolder	[protected Sprite]
+  LoadData.audioClipHolder [protected AudioClip]
+  LoadData.gameObjectHolder [proteced GameObject]
+
+- LoadData.GetDownloadSize(string _addressableAddress)
+  returns and keeps the output in LoadData.DownloadSize [protected long]
+  return -1 if operation fail 
+
+------------------------------ Creating And Updating Json ------------------
+
+- Add create json script in any gameObject
+- Create : creating new json file if not already exist one
+- load : loading json file and fetching data
+- save : saving data in json file
+- Add Category : for adding new group 
+- Add Sub-Category : for adding new addressable address
+
+------------------------------ Data Object -------------------------
+An DataObject object contains following informartion
+- Addressable Address
+- Thumnail Link
+- Price
+- IsDownloaded
+- Object Type

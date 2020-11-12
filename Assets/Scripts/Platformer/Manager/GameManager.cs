@@ -15,11 +15,18 @@ public class GameManager : MonoBehaviour
 
     [Header("Game Over Panel")]
     public GameObject GameOverPanel;
+    public GameObject PauseButton;
 
     private void Awake()
     {
         Instance = this;
-      //  Time.timeScale = 0;
+        //  Time.timeScale = 0;
+        if (!PlayerPrefs.HasKey("HighScore1"))
+        {
+            PlayerPrefs.SetInt("HighScore1", 20000);
+            PlayerPrefs.SetInt("HighScore2", 10000);
+            PlayerPrefs.SetInt("HighScore3", 5000);
+        }
     }
 
     public void LoadNextLevel()

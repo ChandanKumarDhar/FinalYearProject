@@ -9,7 +9,11 @@ public class UIScripts : MonoBehaviour
     [Header("All Text Fields")]
     [SerializeField] private Text lifeText;
     [SerializeField] private Text gemsText;
-    [SerializeField] private Text timeText;
+    public Text timeText;
+
+    public static UIScripts Instance { get; private set; }
+
+    private void Awake() => Instance = this;
 
     private void Update()
     {
